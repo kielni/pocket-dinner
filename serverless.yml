@@ -1,0 +1,33 @@
+service: pocket-dinner
+app: pocket-dinner
+org: kielni
+
+frameworkVersion: '2'
+
+provider:
+  name: aws
+  runtime: python3.8
+
+  iamRoleStatements:
+    - Effect: Allow
+      Action:
+        - ssm:GetParameter
+      Resource:
+        !Sub ${env:PARAMS_ARN}
+
+  environment:
+    POCKET_CONSUMER_KEY: ${env:POCKET_CONSUMER_KEY}
+    POCKET_ACCESS_TOKEN: ${env:POCKET_ACCESS_TOKEN}
+
+plugins:
+  - serverless-python-requirements
+
+custom:
+  pythonRequirements:
+      # to make serverless work with pyenv
+      pythonBin: python
+      dockerizePip: non-linux
+
+functions:
+  pocket_dinner:
+    handler: handler.top_list

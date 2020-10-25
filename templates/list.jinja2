@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <title>Pocket Dinner</title>
+    <style type="text/css">
+      .image-parent { margin-right: 1em; }
+      .image-parent img { max-width: 50px; }
+      .list-group { max-width: 1024px; }
+      a { color: #000; }
+    </style>
+  </head>
+  <body>
+    <ul class="list-group">
+    {% for el in recipes %}
+      <li class="list-group-item d-flex align-items-center">
+        <div class="image-parent" >
+            <img src="{{el.img}}">
+        </div>
+        <a href="{{el.url}}">{{el.title}}</a>
+        {% if el.img %}
+        {% endif %}
+      </li>
+    {% endfor %}
+    </ul>
+  </body>
+</html>

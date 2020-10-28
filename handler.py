@@ -21,7 +21,7 @@ def _get_param(name: str) -> str:
 def from_pocket(consumer_key: str, access_token: str) -> Set[Recipe]:
     # http://getpocket.com/developer/docs/v3/retrieve
     client = pocket.Pocket(consumer_key, access_token)
-    resp = client.get(state="all", tag="recipe", detailType="simple")
+    resp = client.get(state="all", tag="dinner", detailType="simple")
     items = resp[0]["list"]
     keys = list(items.keys())
     recipes: Set[Recipe] = set()

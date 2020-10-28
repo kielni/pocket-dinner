@@ -1,6 +1,6 @@
 # Dinner generator from Pocket items
 
-Randomly choose 10 Pocket items tagged with `recipe` and display as a list.
+Randomly choose 10 Pocket items tagged with `dinner` and display as a list.
 
 Uses the [pocket python wrapper](https://github.com/tapanpandita/pocket) to get data from
 the [Pocket API](https://getpocket.com/developer/docs/overview).
